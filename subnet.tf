@@ -1,14 +1,12 @@
 resource "aws_subnet" "vpc2" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.0.1.0/24"
-
   tags = {
     Name = "Main"
   }
-
-
-
 }
+
+
 output "arn" {
   value = [
     aws_vpc.main.arn,
@@ -19,3 +17,12 @@ output "arn" {
 
 }
 
+
+
+resource "aws_subnet" "faruk" {
+  vpc_id     = aws_vpc.faruk.id
+  cidr_block = "10.0.1.0/24"
+  tags = {
+    Name = "faruk"
+  }
+}
